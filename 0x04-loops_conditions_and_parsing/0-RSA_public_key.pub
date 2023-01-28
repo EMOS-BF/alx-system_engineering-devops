@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #my public key
 Ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC3IIvWF1HYCdwt2nbYDCiZpsm3VXtKfgo51nyc1jsYLS2gTdb0k6lxIMBPqFbj6bIT5Fy77431E4EVUSnharebMgsq
 V2W23FikpOFCGeXxZFvjFr7QlD0lkvwfFWqpyQz0YBVJrZsCZULs6Xo1gHK0bX96gQRAcLyvPH2ih10DtEb/Ai3zFl74QP8saM/J3ylksyXn5o/SiATLuddbhNoCWcXl
