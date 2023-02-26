@@ -7,6 +7,6 @@ You must be able to draw a diagram covering the web stack you built with the sys
 You must be able to explain what are each component doing
 You must be able to explain system redundancy
 Know all the mentioned acronyms: LAMP, SPOF, QPS
-+ Simple web stack - [details](0-simple_web_stack)
-+ Distributed web infrastructure - [details](1-distributed_web_infrastructure)
-+ Secured and monitored web infrastrucure - [details](2-secured_and_monitored_web_infrastructure)
++ Simple web stack - [details](0-simple_web_stack.png)
++ Distributed web infrastructure - [details](1-distributed_web_infrastructure.png)
++ Secured and monitored web infrastrucure - [details](2-secured_and_monitored_web_infrastructure.png)
