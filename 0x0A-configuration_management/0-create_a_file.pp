@@ -1,5 +1,5 @@
 # file in tmp school
-file { '/tmp/school':
+file {'/tmp/school':
 ensure  => file,
   path  => '/tmp/holberton',
   mode  => '0744',
