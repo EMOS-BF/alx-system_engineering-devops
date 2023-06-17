@@ -19,3 +19,4 @@ do
   ((i++))
  fi
 done
+i=$i
