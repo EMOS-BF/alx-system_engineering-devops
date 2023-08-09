@@ -4,7 +4,8 @@
 import requests
 
 def number_of_subscribers(subreddit):
-"""If not a valid subreddit, return 0."""
+ """function that queries the Reddit API and returns the number of
+    subscribers for a given subreddit"""
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
     headers = {'User-Agent': 'My User Agent 1.0'}
     response = requests.get(url, headers=headers)
