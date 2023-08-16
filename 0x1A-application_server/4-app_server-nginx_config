@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Configures Nginx to serve the route /airbnb-onepage/ from AirBnB_clone_v2.
+http {
+server {
+listen 80;
+server_name 100.25.169.123
+location /airbnb-onepage/ {
+    proxy_pass http://100.25.169.123:5000/airbnb-onepage/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+location /airbnb-dynamic/number_odd_or_even/ {
+    proxy_pass http://100.25.169.123:5001;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+
+location /api/ {
+    proxy_pass http://100.25.169.123:5002/api/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+}
