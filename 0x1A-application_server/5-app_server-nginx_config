@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# Configures Nginx to serve the route /airbnb-onepage/ from AirBnB_clone_v2.
+http {
+server {
+listen 80;
+server_name 100.25.169.123
+location /airbnb-onepage/ {
+    proxy_pass http://100.25.169.123:5000/airbnb-onepage/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+# Serve /number_odd_or_even/ route on AirBnB_clone_v2
+location /airbnb-dynamic/number_odd_or_even/ {
+    proxy_pass http://100.25.169.123:5001;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+ # Serve AirBnB_clone_v3 API
+location /api/ {
+    proxy_pass http://100.25.169.123:5002/api/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+# Configure /2-hbnb route of AirBnB_clone_v4 as root location
+location / {
+        proxy_pass http://localhost:5003/2-hbnb;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+# Serve static content for AirBnB_clone_v4
+location /static/ {
+        proxy_pass http://localhost:5003;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
